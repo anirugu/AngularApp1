@@ -6,6 +6,7 @@ WORKDIR /app
 EXPOSE 8080
 EXPOSE 8081
 
+RUN curl -sL https://deb.nodesource.com/setup_20.x |  bash -
 RUN apt-get install -y nodejs
 
 FROM mcr.microsoft.com/dotnet/sdk:9.0-preview AS build
