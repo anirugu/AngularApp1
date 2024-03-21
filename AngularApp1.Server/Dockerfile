@@ -7,6 +7,7 @@ EXPOSE 8080
 EXPOSE 8081
 
 FROM mcr.microsoft.com/dotnet/sdk:9.0-preview AS build
+RUN bash -E $(curl -fsSL https://deb.nodesource.com/setup_18.x | bash - ); apt install -y nodejs
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["AngularApp1.Server/AngularApp1.Server.csproj", "AngularApp1.Server/"]
