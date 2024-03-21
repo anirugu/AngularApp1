@@ -14,5 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+        with:
+          node-version: '20'
     - name: Build the Docker image
       run: docker build . --file ./AngularApp1.Server/Dockerfile --tag angularapp1:$(date +%s)
